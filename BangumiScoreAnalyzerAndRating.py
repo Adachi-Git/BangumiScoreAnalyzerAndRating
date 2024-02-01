@@ -2,10 +2,14 @@ import sqlite3
 import json
 import numpy as np
 import matplotlib.pyplot as plt
+import os
 
 
-# 连接到SQLite数据库
-db_path = r'C:\Users\Darling\Desktop\subject.db'  # 请替换为你的SQLite数据库路径
+# 获取当前脚本所在目录
+current_directory = os.path.dirname(os.path.abspath(__file__))
+
+# 拼接数据库文件路径
+db_path = os.path.join(current_directory, 'subject.db')
 conn = sqlite3.connect(db_path)
 cursor = conn.cursor()
 
