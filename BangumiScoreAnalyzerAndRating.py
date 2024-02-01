@@ -55,7 +55,7 @@ for id, score_details_json in rows:
 conn.close()
 
 # 输出结果
-output_file_path = r'C:\Users\Darling\Desktop\output.json'  # 请替换为你希望保存的文件路径
+output_file_path = os.path.join(current_directory, 'output.json')
 with open(output_file_path, 'w', encoding='utf-8') as output_file:
     json.dump(result, output_file, ensure_ascii=False, indent=2)
 
